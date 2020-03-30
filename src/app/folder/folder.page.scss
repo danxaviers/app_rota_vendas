@@ -1,3 +1,21 @@
+ion-header{
+  background: #130039;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+ion-tab-bar{
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+ion-header .hydrated{
+  color: #fdcc52;
+}
+
+ion-title{
+  font-weight: 300;
+  text-align: center;
+  font-size: 22px;
+}
+
 ion-menu-button {
   color: var(--ion-color-primary);
 }
@@ -29,4 +47,8 @@ ion-menu-button {
 
 ion-content ion-toolbar {
   --background: transparent;
+}
+
+.text-yellow{
+  color: #fdcc52;
 }
