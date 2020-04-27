@@ -1,0 +1,107 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Nova Venda</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid class="container">
+    <ion-row class="sale-btn">
+      <ion-button expand="block" routerLink="/product-list">Buscar Produtos</ion-button>
+    </ion-row>
+
+    <ion-row class="head-table">
+      <ion-col class="text-yellow">
+        PRODUTO
+      </ion-col>
+      <ion-col class="text-yellow">
+        QTD
+      </ion-col>
+      <ion-col class="text-yellow">
+        remover
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-table">
+      <ion-col>
+        Cerveja
+      </ion-col>
+      <ion-col>
+        5
+      </ion-col>
+      <ion-col class="delete-icon">
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-table">
+      <ion-col>
+        Cerveja
+      </ion-col>
+      <ion-col>
+        5
+      </ion-col>
+      <ion-col class="delete-icon">
+        <ion-icon name="close-circle"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-table">
+      <ion-col>
+        Cerveja
+      </ion-col>
+      <ion-col>
+        5
+      </ion-col>
+      <ion-col class="price">
+        <ion-icon class="delete-icon" name="close-circle"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="total-price">
+      <ion-card>
+        Total: <span>&nbsp;R$ 99,50</span>
+      </ion-card>
+    </ion-row>
+
+    <ion-row class="payment">
+
+      <ion-col>
+        <ion-list>
+          <ion-list-header>
+            <ion-label>
+              Pagamento
+            </ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Método de Pagamento</ion-label>
+            <ion-select placeholder="Definir">
+              <ion-select-option value="dinheiro">Dinheiro</ion-select-option>
+              <ion-select-option value="cartão">Cartão</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Valor Recebido</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Troco</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="sale-btn">
+      <ion-button expand="block">Finalizar Pedido</ion-button>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
