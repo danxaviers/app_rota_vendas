@@ -1,105 +1,24 @@
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Histórico de Vendas</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Histórico de Vendas</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-grid class="container">
-
-    <ion-row class="head-table">
-      <ion-col class="text-yellow">
-        DIA
-      </ion-col>
-      <ion-col class="text-yellow">
-        VALOR
-      </ion-col>
-      <ion-col class="text-yellow">
-        METODO
-      </ion-col>
-      <ion-col class="text-yellow">
-        STATUS
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="row-table">
-      <ion-col>
-        12/05
-      </ion-col>
-      <ion-col>
-        R$40,00
-      </ion-col>
-      <ion-col>
-        Dinheiro
-      </ion-col>
-      <ion-col>
-        PAGO
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="row-table">
-      <ion-col>
-        12/05
-      </ion-col>
-      <ion-col>
-        R$40,00
-      </ion-col>
-      <ion-col>
-        Dinheiro
-      </ion-col>
-      <ion-col>
-        PAGO
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="row-table">
-      <ion-col>
-        12/05
-      </ion-col>
-      <ion-col>
-        R$40,00
-      </ion-col>
-      <ion-col>
-        Dinheiro
-      </ion-col>
-      <ion-col>
-        PAGO
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="row-table">
-      <ion-col>
-        12/05
-      </ion-col>
-      <ion-col>
-        R$40,00
-      </ion-col>
-      <ion-col>
-        Dinheiro
-      </ion-col>
-      <ion-col>
-        PAGO
-      </ion-col>
-    </ion-row>
-    
-  </ion-grid>
-
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-
-      <ion-tab-button tab="schedule" routerLink="/sales-history">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>Histórico</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="speakers" routerLink="/sales">
-        <ion-icon name="add-circle-outline"></ion-icon>
-        <ion-label>Nova Compra</ion-label>
-      </ion-tab-button>
-
-    </ion-tab-bar>
-  </ion-tabs>
+  <ion-list>
+    <ion-list-header>
+      Minhas ultimas vendas
+    </ion-list-header>
+    <ion-item *ngFor="let item of sales">
+      <ion-label>
+        <h2>{{item.product.name}}</h2>
+        <ion-label color="success">{{item.value | currency:'BRL'}}</ion-label>
+        <h4>QTD - {{item.qtd}}</h4>
+        <h5>RECEBIMENTO - {{item.payment.name}}</h5>
+        <h6>#COD - {{item.id}} - {{item.local.name}}</h6>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

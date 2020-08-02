@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SalesService } from '../service/api/sales/sales.service';
 
 @Component({
   selector: 'app-sales-history',
@@ -7,8 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesHistoryComponent implements OnInit {
 
-  constructor() { }
+  sales:any; 
+  
+  constructor(
+    private salesService: SalesService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getSales();
+  }
+
+  getSales() {
+    this.salesService.getByUserId(1).subscribe(
+      res => {
+        console.log('VENDAS', res);
+        this.sales = res;
+      }, err => {
+        console.error(err);
+      }, () => {
+        console.log('FINALIZADA');
+      }
+    )
+  }
 
 }
